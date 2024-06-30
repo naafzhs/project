@@ -164,8 +164,8 @@ class Ball {
         this.x = x;
         this.y = y;
         this.radius = 15;
-        this.xSpeed = random([-6, 6]); // Ensure the ball moves initially to the left or right
-        this.ySpeed = random(-2, 2); // Random initial vertical speed
+        this.xSpeed = random(4, 6); // Random initial speed
+        this.ySpeed = random(-4, 4); // Random initial vertical speed
         this.gravity = 0.2; // Gravity for the ball
         this.bounced = false;
     }
@@ -191,12 +191,13 @@ class Ball {
             this.y = height - this.radius;
             this.ySpeed *= -0.8; // Ball loses some speed after bouncing
             this.bounced = true;
-            this.handleMissedBall();
         }
 
         // Check for net collision
         if (this.x > width / 2 - 10 && this.x < width / 2 + 10 && this.y > height - 200) {
-            this.handleNetCollision();
+            this.xSpeed *= -1;
+            this.ySpeed *= -1;
+            this.bounced = true;
         }
 
         // Check for collision with left racket
@@ -217,28 +218,7 @@ class Ball {
 
         // Limit ball's travel area
         if (this.x < 0 || this.x > width) {
-            this.handleMissedBall();
+            this.xSpeed *= -1;
         }
-    }
-
-    handleNetCollision() {
-        if (this.xSpeed > 0) {
-            leftScore++;
-        } else {
-            rightScore++;
-        }
-        resetBall();
-    }
-
-    handleMissedBall() {
-        if (this.xSpeed > 0) {
-            leftScore++;
-        } else {
-            rightScore++;
-        }
-        resetBall();
     }
 }
-
-
-
