@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TENNIS GAME</title>
+    <meta name="theme-color" content="#5853D2" />
+    <link rel="icon" type="image/png" href="Images/favicon.ico">
+    <script src="libraries/p5.min.js" type="text/javascript"></script> 
+    <script src="libraries/p5.sound.min.js" type="text/javascript"></script>    <style>
+        body {
+            font-family: 'Bree Serif', serif;
+            font-weight: bold;
+            margin: 0;
+            overflow: hidden;
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
+
+        #welcome-container {
+            background: url('tennis_bg.jpg') no-repeat center center fixed;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main_heading {
+            font-size: 48px;
+            margin: 20px 0;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .list {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .list li {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        #flex {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        #left,
+        #right {
+            margin: 0 20px;
+        }
+
+        .ul_flex {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .button {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #228B22; 
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        #game {
+            display: none; 
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #6bc8b6; 
+        }
+    </style>
+</head>
+
+<body>
+    <div id="welcome-container">
+        <h1 class="main_heading">TENNIS GAME</h1>
+
+        <h2>Rules Of The Game</h2>
+        <ul class="list">
+            <li>Welcome to Tennis Game!!</li>
+            <li>This game is a 2-player mode game. The left player and the right player.</li>
+            <li>Below you will find the controls on how to play the game.</li>
+        </ul>
+
+        <h1>CONTROLS</h1>
+        <div id="flex">
+            <div id="left">
+                <h2>Left Player</h2>
+                <ul class="ul_flex">W (Jump)</ul>
+                <ul class="ul_flex">A (Move Left)</ul>
+                <ul class="ul_flex">D (Move Right)</ul>
+                <ul class="ul_flex">Q (Hit)</ul>
+            </div>
+            <div id="right">
+                <h2>Right Player</h2>
+                <ul class="ul_flex">↑ (Jump)</ul>
+                <ul class="ul_flex">← (Move Left)</ul>
+                <ul class="ul_flex">→ (Move Right)</ul>
+                <ul class="ul_flex">L (Hit)</ul>
+            </div>
+        </div>
+
+        <a href="#game" class="heading btn button" onclick="startGame()">PLAY GAME</a>
+        <hr>
+    </div>
+
+    <div id="game">
+        <script src="Project.js"></script>
+    </div>
+
+    <script>
+        function startGame() {
+            document.getElementById('welcome-container').style.display = 'none';
+            document.getElementById('game').style.display = 'flex';
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POWER BADMINTON</title>
+    <meta name="theme-color" content="#5853D2" />
+    <link rel="icon" type="image/png" href="Images/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <style>
+        body {
+            font-family: 'Bree Serif', serif;
+            margin: 0;
+            overflow: hidden;
+            background: #5853D2;
+            color: white;
+            text-align: center;
+        }
+
+        .main_heading {
+            font-size: 48px;
+            margin: 20px 0;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .list {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .list li {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        #flex {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        #left,
+        #right {
+            margin: 0 20px;
+        }
+
+        .ul_flex {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .button {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #191970;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        #game {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="main_heading">BIRDMINTON</h1>
+
+    <h2>Rules Of The Game</h2>
+    <ul class="list">
+        <li>Multiplayer game, choose from either birdy or piggy. There are huge varieties present in the game</li>
+        <li>3 different types of Shots including clear (back to back), drop (front to front) and intermediate</li>
+        <li>Each player has a total of 5 eggs, you lose once all of your eggs are broken</li>
+        <li>Faults include Net, outside of the playground but you don't lose your eggs with these faults</li>
+        <li>You lose your egg if the shuttle lands on your side of the court</li>
+        <li>You can jump and move anywhere in the court</li>
+    </ul>
+
+    <h1>CONTROLS</h1>
+    <div id="flex">
+        <div id="left">
+            <h2>Left Player</h2>
+            <ul class="ul_flex">W (Jump)</ul>
+            <ul class="ul_flex">A (Move Left)</ul>
+            <ul class="ul_flex">D (Move Right)</ul>
+            <ul class="ul_flex">S (Do Service)</ul>
+            <ul class="ul_flex">Q (Hit Long with Jump)</ul>
+            <ul class="ul_flex">E (Hit Short)</ul>
+        </div>
+        <div id="right">
+            <h2>Right Player</h2>
+            <ul class="ul_flex">↑ (Jump)</ul>
+            <ul class="ul_flex">← (Move Left)</ul>
+            <ul class="ul_flex">→ (Move Right)</ul>
+            <ul class="ul_flex">4 (Hit Long with Jump)</ul>
+            <ul class="ul_flex">5 (Hit Short)</ul>
+        </div>
+    </div>
+
+    <a href="#game" class="heading btn button">PLAY GAME</a>
+
+    <h3 style="margin-top: 200px;">MADE BY:</h3>
+    <h2>Ayush Verma &nbsp || &nbsp Kapil Yadav</h2>
+    <hr>
+
+    <div id="game">
+        <script src="Project.js"></script>
+    </div>
+</body>
+
+</html> -->
